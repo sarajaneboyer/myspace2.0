@@ -25,7 +25,7 @@ class Register extends React.Component {
     const { username, email, password, passwordConfirmation, } = this.state;
     
     return (
-      <Segment basic>
+      <div id="wrap">
         <Header as='h1' textAlign='center'>Register</Header>
         <Form onSubmit={this.handleSubmit}>
         <Form.Input
@@ -69,7 +69,7 @@ class Register extends React.Component {
             <Button primary type='submit'>Submit</Button>
           </Segment>
         </Form>
-      </Segment>
+      </div>
     )
   }
 }

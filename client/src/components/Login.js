@@ -20,7 +20,8 @@ class Login extends React.Component {
     const { email, password, } = this.state;
   
     return (
-      <Segment basic>
+      // <Segment basic >
+        <div id="wrap">
         <Header as='h1' textAlign='center'>Login</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
@@ -46,7 +47,9 @@ class Login extends React.Component {
             <Button primary type='submit'>Submit</Button>
           </Segment>
         </Form>
-      </Segment>
+       
+      {/* </Segment> */}
+      </div>
     )
   }
 }

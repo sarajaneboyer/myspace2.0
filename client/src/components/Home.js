@@ -1,8 +1,13 @@
 import React from 'react';
-import { Header, } from 'semantic-ui-react';
-
+import { Header, Grid, Icon } from 'semantic-ui-react';
+import Navbar from './Navbar';
 const Home = () => (
-  <Header as="h3" textAlign="center">MySpace</Header>
+ 
+    <div id="wrap">
+    <h1 size="massive" ><Icon name= "users" size="massive"/>myspace</h1>
+    
+    <h1 align="center">your place to connect</h1>
+    </div>
 )
 
 export default Home;
