@@ -25,7 +25,7 @@ class Register extends React.Component {
     const { username, email, password, passwordConfirmation, } = this.state;
     
     return (
-      <Segment basic>
+      <div id="wrap">
         <Header as='h1' textAlign='center'>Register</Header>
         <Form onSubmit={this.handleSubmit}>
         <Form.Input
@@ -66,10 +66,10 @@ class Register extends React.Component {
             onChange={this.handleChange}
           />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+            <Button color= "black">Submit</Button>
           </Segment>
         </Form>
-      </Segment>
+      </div>
     )
   }
 }

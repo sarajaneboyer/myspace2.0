@@ -20,9 +20,10 @@ class Login extends React.Component {
     const { email, password, } = this.state;
   
     return (
-      <Segment basic>
+      // <Segment basic >
+        <div id="wrap" >
         <Header as='h1' textAlign='center'>Login</Header>
-        <Form inverted onSubmit={this.handleSubmit}>
+        <Form  onSubmit={this.handleSubmit}>
           <Form.Input
             label="Email"
             autoFocus
@@ -43,10 +44,12 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+            <Button color="black" >Submit</Button>
           </Segment>
         </Form>
-      </Segment>
+       
+      {/* </Segment> */}
+      </div>
     )
   }
 }

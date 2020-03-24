@@ -1,7 +1,8 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Menu, } from 'semantic-ui-react'
+import { Menu, Icon, } from 'semantic-ui-react'
 import { Link, withRouter, } from 'react-router-dom'
+
 
 class Navbar extends React.Component {
   
@@ -10,16 +11,34 @@ class Navbar extends React.Component {
     
     if (user) {
       return (
-        <Menu.Menu position='right'>
+        <Menu inverted vertical style={{height: "100"}}>
+           <h3 style={{color: "white" }}><Icon name="users" size="big" inverted color="white"/>myspace</h3>
+          <br/>
+           <Link to='/'>
+            <Menu.Item 
+              id='home'
+              name='home'
+              active={location.pathname === '/'}
+            />
+            </Link>
           <Menu.Item
             name='logout'
             onClick={ () => handleLogout(this.props.history) }
           />
-        </Menu.Menu>
+        </Menu>
       )
     } else {
       return (
-        <Menu.Menu position='right'>
+        <Menu inverted vertical>
+          <h3 style={{color: "white" }}><Icon name="users" size="big" inverted color="white"/>myspace</h3>
+          <br/>
+            <Link to='/'>
+            <Menu.Item
+              id='home'
+              name='home'
+              active={location.pathname === '/'}
+            />
+            </Link>
           <Link to='/login'>
             <Menu.Item
               id='login'
@@ -34,25 +53,25 @@ class Navbar extends React.Component {
               active={location.pathname === '/register'}
             />
           </Link>
-        </Menu.Menu>
+        </Menu>
       )
     }
   }
   
   render() {
     return (
-      <div>
-        <Menu pointing secondary>
-          <Link to='/'>
+      <>
+        <Menu inverted vertical>
+          {/* <Link to='/'>
             <Menu.Item
               name='home'
               id='home'
               active={this.props.location.pathname === '/'}
             />
-          </Link>
+          </Link> */}
             { this.rightNavItems() }
         </Menu>
-      </div>
+      </>
     )
   }
 }
@@ -68,5 +87,6 @@ export class ConnectedNavbar extends React.Component {
     )
   }
 }
+
 
 export default withRouter(ConnectedNavbar);
