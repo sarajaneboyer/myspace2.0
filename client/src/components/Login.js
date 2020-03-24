@@ -21,9 +21,9 @@ class Login extends React.Component {
   
     return (
       // <Segment basic >
-        <div id="wrap">
+        <div id="wrap" >
         <Header as='h1' textAlign='center'>Login</Header>
-        <Form inverted onSubmit={this.handleSubmit}>
+        <Form  onSubmit={this.handleSubmit}>
           <Form.Input
             label="Email"
             autoFocus
@@ -44,7 +44,7 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+            <Button color="black" >Submit</Button>
           </Segment>
         </Form>
        
