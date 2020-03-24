@@ -6,8 +6,8 @@ import { Switch, Route, } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Register from './components/Register';
-import { Section, Container } from "semantic-ui-react";
-
+import { Container } from "semantic-ui-react";
+import FetchUser from './components/FetchUser';
 
 function App() {
   return (
@@ -15,13 +15,16 @@ function App() {
       <section >
         <Navbar />
       </section>
+      <FetchUser>
+        <Container>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
         <Route component={NoMatch} />
       </Switch>
-
+      </Container>
+      </FetchUser>
     </Container>
   )
 };
