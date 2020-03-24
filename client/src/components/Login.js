@@ -23,7 +23,7 @@ class Login extends React.Component {
       // <Segment basic >
         <div id="wrap">
         <Header as='h1' textAlign='center'>Login</Header>
-        <Form onSubmit={this.handleSubmit}>
+        <Form inverted onSubmit={this.handleSubmit}>
           <Form.Input
             label="Email"
             autoFocus
