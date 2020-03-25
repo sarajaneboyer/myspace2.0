@@ -13,6 +13,7 @@ class MyFriends extends React.Component {
   render() {
     const { friends, } = this.state;
     return (
+      <div id="wrap">
       <Card.Group itemsPerRow={4}>
         { friends.map( friend =>
           <Card key={friend.id}>
@@ -32,8 +33,9 @@ class MyFriends extends React.Component {
           </Card>
         )}
       </Card.Group>
+      </div>
     )
   }
-}
 
+}
 export default MyFriends;

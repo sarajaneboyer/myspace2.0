@@ -27,6 +27,9 @@ class Navbar extends React.Component {
               name='my friends'
               active={location.pathname === '/my_friends'}
             />
+            <br/>
+            <br/>
+            <br/>
             </Link>
           <Menu.Item
             name='logout'

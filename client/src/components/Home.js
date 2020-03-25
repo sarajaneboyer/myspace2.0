@@ -10,16 +10,16 @@ class Home extends React.Component {
         axios.get('/api/profiles')
         .then(res => this.setState({ profiles: res.data, }))
     }
-    sample= () => {
-        const { profiles, } = this.state;
+    // sample= () => {
+    //     const { profiles, } = this.state;
 
-        if (profiles.length) {
-            const index = Math.floor(Math.random() * profiles.length);
-            return profiles[index];
-        }   else {
-            return null;
-        }
-    }
+    //     if (profiles.length) {
+    //         const index = Math.floor(Math.random() * profiles.length);
+    //         return profiles[index];
+    //     }   else {
+    //         return null;
+    //     }
+    // }
 
     beFriend = (id) => {
         const { profiles, } = this.state;
@@ -28,44 +28,35 @@ class Home extends React.Component {
     };
 
     render(){
-        const profile = this.sample();
-        if (profile){
+        const { profiles, } = this.state
         return (
     <div id="wrap">
-    <h1 size="massive" ><Icon name= "users" size="massive"/>myspace</h1>
-    <br />
-          <Header as='h1'>Profiles</Header>
+    <h1 size="massive" Align="center"><Icon name= "users" size="big"/>myspace</h1>
+          <Header as='h3' >Explore</Header>
           <br />
+          <div id="wrap"></div>
+      <Card.Group itemsPerRow={4}>
+        { profiles.map( profile =>
           <Card key={profile.id}>
-            <Image src={profile.avatar} wrapped ui={false} />
+            <Image src={profile.avatar} />
             <Card.Content>
               <Card.Header>
                 { profile.username }
               </Card.Header>
-              <Card.Description>
-                { profile.description }
-              </Card.Description>
               <Card.Meta>
                 { `${profile.age}  ${profile.gender}` }
               </Card.Meta>
+              <Card.Content extra>
+              <Button color="black" floated="right" icon basic onClick={() => this.beFriend(profile.id)}>
+                <Icon name="add user" /> Friend </Button>
             </Card.Content>
-            <Card.Content extra>
-              <Button color="black" icon basic onClick={() => this.beFriend(profile.id)}>
-                <Icon name="add user" />
-              </Button>
             </Card.Content>
           </Card>
-          {/* <Link to="/my_cats">
-            <Button color="blue">
-              My Cats
-            </Button>
-          </Link> */}
-    </div>
-        )
-    } else {
-        return <Header textAlign="center">No profiles</Header>
-    }
-    }
+        )}
+      </Card.Group>
+      </div>
+    )
+  }
 }
 
 export default Home;
